@@ -1,11 +1,11 @@
 /* 
- * Aufgabenblatt 1 
- * Aufgabe 3 
- * Bearbeitungsdauer: 120 min 
+ * Aufgabenblatt 2
+ * Aufgabe Autosteuerung
+ * Bearbeitungsdauer: xxx min 
  * Bemerkungen: 
  * keine 
  * 
- * @author Lukas Beppler 
+ * @author Lukas Beppler & Jaques Dordel
  * @version 1.0 
  */ 
 
