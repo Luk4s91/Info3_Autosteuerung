@@ -1,4 +1,3 @@
-package VehicleControll;
 
 import java.util.Properties;
 
