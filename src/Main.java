@@ -12,7 +12,6 @@
 public class Main {
 
 	
-	
 	public static void main(String[] args) {
 		Command c = new Gear(111,222,333,444,555);
 		Command c1 = new Direction(1, 2, 2222, 90);
