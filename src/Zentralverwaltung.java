@@ -1,13 +1,14 @@
+import java.util.Vector;
 
 public class Zentralverwaltung {
-	private static Vector<Prototyp> prototypen = null;
-	private static Vector<Prototyp> controllprocess = null;
+	private static Vector prototypen = new Vector(); //Was macht die von uns erstelle Klasse Vektor??? Daher diese Unterkringelung bei der importierten??
+	private static Vector controllprocess = new Vector();
 	
 	private Zentralverwaltung(){}
 	
 	public void createPrototypen()
 	{
-		//INHALT
+		prototypen.add(); //woher Prototyp-objekte???
 	}
 	public void addStep(Prototyp iwas)
 	{
