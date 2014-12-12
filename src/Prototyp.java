@@ -21,8 +21,8 @@ public class Prototyp {
 		{
 			Direction d = new Direction(0, 0, 0, 0);
 			return d;
-		}
-		return null; //Gibt nur zwei Kommandos, oder??
+		}	//Gibt nur zwei Kommandos, oder??
+		return null; 
 	}
 	//Standardkonstruktor?!?!
 	public Prototyp(String nameCommand) {

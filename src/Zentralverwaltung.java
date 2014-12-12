@@ -1,7 +1,7 @@
 
 public class Zentralverwaltung {
-	private static Vector prototypen = null;
-	private static Vector controllprocess = null;
+	private static Vector<Prototyp> prototypen = null;
+	private static Vector<Prototyp> controllprocess = null;
 	
 	private Zentralverwaltung(){}
 	
@@ -26,5 +26,21 @@ public class Zentralverwaltung {
 	//INHALT
 	}
 	//f)
+
+	public static void setControllprocess(Vector<Prototyp> controllprocess) {
+		Zentralverwaltung.controllprocess = controllprocess;
+	}
+
+	public static Vector<Prototyp> getControllprocess() {
+		return controllprocess;
+	}
+
+	public static void setPrototypen(Vector<Prototyp> prototypen) {
+		Zentralverwaltung.prototypen = prototypen;
+	}
+
+	public static Vector<Prototyp> getPrototypen() {
+		return prototypen;
+	}
 
 }
