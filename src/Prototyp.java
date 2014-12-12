@@ -24,5 +24,10 @@ public class Prototyp {
 		}
 		return null; //Gibt nur zwei Kommandos, oder??
 	}
+	//Standardkonstruktor?!?!
+	public Prototyp(String nameCommand) {
+		super();
+		this.nameCommand = nameCommand;
+	}
 
 }
