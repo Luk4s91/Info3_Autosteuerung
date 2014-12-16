@@ -1,6 +1,7 @@
+import java.util.Properties;
 import java.util.Vector;
 
-public class Zentralverwaltung {
+public class Zentralverwaltung implements Interface {
 	private static Vector <Prototyp> prototypen = new Vector <Prototyp>();    //Es soll von jedem Vektor nur einen geben.
 	private static Vector <Command> controllprocess = new Vector <Command>();
 	
@@ -40,5 +41,30 @@ public class Zentralverwaltung {
 		}
 	}
 
+	String verzeichnis = "E:\\Mechatronik\\3_Semester\\Informatik_3\\otto";	
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Properties laden(String verzeichnis) {
+		Properties daten=new Properties();
+		Serialisieren ser=new Serialisieren();
+		daten=ser.laden(verzeichnis);
+		
+		prototypen=(Vector<Prototyp>) daten.get("Zentralverwaltung");
+		controllprocess=(Vector<Command>) daten.get("Zentralverwaltung");
+		
+		return null;
+	}
 
+	@Override
+	public void speichern(Properties daten, String verzeichnis) {
+		daten=new Properties();
+		daten.put("Zentralverwaltung", prototypen);
+		daten.put("Zentralverwaltung", controllprocess);
+		Serialisieren ser=new Serialisieren();
+		ser.speichern(daten, verzeichnis);
+	
+	}
+
+	
 }

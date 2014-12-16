@@ -18,7 +18,10 @@ public class Main {
 		c.equals(c1);
 		
 		Gear myGear = new Gear(111,222,333,444,555);
-		System.out.println(myGear);
+		//System.out.println(myGear);
+		
+		
+		
 	
 	}
 
