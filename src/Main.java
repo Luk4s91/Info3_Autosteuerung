@@ -10,7 +10,6 @@
  */ 
 
 public class Main {
-
 	
 	public static void main(String[] args) {
 		Command c = new Gear(111,222,333,444,555);

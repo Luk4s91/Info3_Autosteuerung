@@ -3,6 +3,8 @@ import java.io.InputStreamReader;
 //import java.io.FileInputStream;
 //import java.io.InputStream;
 
+//Tests schon in der Main durchgefuehrt
+
 public class Test {
 
 	 BufferedReader bR= new BufferedReader(

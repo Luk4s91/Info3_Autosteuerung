@@ -1,4 +1,3 @@
-
 public class Prototyp {
 	
 	private String nameCommand;
@@ -10,21 +9,33 @@ public class Prototyp {
 		return nameCommand;
 	}
 	
-	public Command createInstance() //Soll über den Namen gucken, welcher Command es ist und davon ein neues Objekt erzeugen!? Prüfen obs so geht!!!
+	public Command createInstance()
 	{
 		if (this.nameCommand=="Gear")
 		{
-			Gear g = new Gear(0, 0, 0, 0, 0);
-			return g;
+			Gear myGear = new Gear(0, 0, 0, 0, 0);
+			return myGear;
 		}
 		else if (this.nameCommand=="Direction")
 		{
-			Direction d = new Direction(0, 0, 0, 0);
-			return d;
-		}	//Gibt nur zwei Kommandos, oder??
+			Direction myDirection = new Direction(0, 0, 0, 0);
+			return myDirection;
+		}
+		else if (this.nameCommand=="Goto")
+		{
+			Goto myGoto = new Goto(0, 0, 0);
+			return myGoto;			
+		}
+		else if (this.nameCommand=="If")
+		{
+			If myIf = new If(0, 0, 0, 0);
+			return myIf;
+		}
+			
 		return null; 
 	}
-	//Standardkonstruktor?!?!
+	
+	//Standardkonstruktor
 	public Prototyp(String nameCommand) {
 		super();
 		this.nameCommand = nameCommand;

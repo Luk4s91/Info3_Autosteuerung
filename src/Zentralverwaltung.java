@@ -1,47 +1,44 @@
 import java.util.Vector;
 
 public class Zentralverwaltung {
-	private static Vector prototypen = new Vector(); //Was macht die von uns erstelle Klasse Vektor??? Daher diese Unterkringelung bei der importierten??
-	private static Vector controllprocess = new Vector();
+	private static Vector <Prototyp> prototypen = new Vector <Prototyp>();    //Es soll von jedem Vektor nur einen geben.
+	private static Vector <Command> controllprocess = new Vector <Command>();
 	
-	private Zentralverwaltung(){}
+	private Zentralverwaltung(){}  //private damit nur ein Objekt davon erstellt wird.
 	
 	public void createPrototypen()
 	{
-		prototypen.add(); //woher Prototyp-objekte???
+		prototypen.addElement(new Prototyp("Direction")); //Fuegt ein Prototyp-Objekt in die Liste ein.
+		prototypen.addElement(new Prototyp("Gear"));
+		prototypen.addElement(new Prototyp("Goto"));
+		prototypen.addElement(new Prototyp("If"));
 	}
-	public void addStep(Prototyp iwas)
+	public void addStep(Prototyp prototyp)
 	{
-	//INHALT	
+		controllprocess.addElement(prototyp.createInstance()); //Fuegt vom ausgewaehlten Prototyp ein Command-Objekt ein.
 	}
 	public void removeStep(int iD)
 	{
-	//INHALT
+		controllprocess.remove(iD);
 	}
 	public void incOrder(int iD)
 	{
-	//INHALT
+		if(controllprocess.firstElement().equals(controllprocess.elementAt(iD)) == false)
+		{
+		controllprocess.addElement(controllprocess.elementAt(iD-1)); //Temp in Vektorliste
+		controllprocess.add(iD-1, controllprocess.elementAt(iD));
+		controllprocess.add(iD, controllprocess.lastElement());
+		}
 	}
 	public void decOrder(int iD)
 	{
-	//INHALT
-	}
-	//f)
-
-	public static void setControllprocess(Vector<Prototyp> controllprocess) {
-		Zentralverwaltung.controllprocess = controllprocess;
-	}
-
-	public static Vector<Prototyp> getControllprocess() {
-		return controllprocess;
+		if(controllprocess.lastElement().equals(controllprocess.elementAt(iD)) == false)
+		{
+		controllprocess.addElement(controllprocess.elementAt(iD+1)); //Temp in Vektorliste
+		controllprocess.add(iD+1, controllprocess.elementAt(iD));
+		controllprocess.add(iD, controllprocess.lastElement());
+		}
 	}
 
-	public static void setPrototypen(Vector<Prototyp> prototypen) {
-		Zentralverwaltung.prototypen = prototypen;
-	}
-
-	public static Vector<Prototyp> getPrototypen() {
-		return prototypen;
-	}
 
 }
