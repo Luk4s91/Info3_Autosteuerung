@@ -20,7 +20,8 @@ public class Main {
 		Gear myGear = new Gear(111,222,333,444,555);
 		//System.out.println(myGear);
 		
-		
+		//Zentralverwaltung zentral = new Zentralverwaltung();
+		//Zentralverwaltung.createPrototypes();
 		
 	
 	}
