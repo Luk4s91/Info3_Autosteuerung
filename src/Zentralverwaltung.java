@@ -7,6 +7,10 @@ public class Zentralverwaltung implements Interface {
 	
 	private Zentralverwaltung(){}  //private damit nur ein Objekt davon erstellt wird.
 	
+	public static Zentralverwaltung createInstance(){
+		return new Zentralverwaltung();
+	}
+	
 	public void createPrototypes()
 	{
 		prototypen.addElement(new Prototyp("Direction")); //Fuegt ein Prototyp-Objekt in die Liste ein.
