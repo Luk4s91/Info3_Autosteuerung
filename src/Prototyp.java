@@ -1,12 +1,17 @@
 public class Prototyp {
 	
 	private String nameCommand;
-	
+
 	public void setNameCommand(String nameCommand) {
 		this.nameCommand = nameCommand;
 	}
 	public String getNameCommand() {
 		return nameCommand;
+	}
+	
+	@Override
+	public String toString() {
+		return "Prototyp [nameCommand=" + nameCommand + "]";
 	}
 	
 	public Command createInstance()
@@ -39,6 +44,7 @@ public class Prototyp {
 	public Prototyp(String nameCommand) {
 		super();
 		this.nameCommand = nameCommand;
+//		this.createInstance();
 	}
 
 }

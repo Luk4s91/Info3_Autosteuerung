@@ -18,4 +18,10 @@ public class Direction extends Movement{
 		super(iD,stepId, hwAdress);
 		this.degree=degree;
 	}
+	@Override
+	public String toString() {
+		return "Direction [degree=" + degree + ", toString()="
+				+ super.toString() + "]";
+	}
+	
 }
