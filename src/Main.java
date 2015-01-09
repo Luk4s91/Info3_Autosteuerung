@@ -18,12 +18,15 @@ public class Main {
 		
 		c.equals(c1);
 		
-		Gear myGear = new Gear(111,222,333,444,555);
-		System.out.println(myGear);
+//		Gear myGear = new Gear(111,222,333,444,555);
+//		System.out.println(myGear);
 		
 		Zentralverwaltung zentral = Zentralverwaltung.createInstance();
 		zentral.createPrototypes();
 		
+		System.out.println(zentral.vPrototypenObject(0));
+		
+		/*
 		v= zentral.vPrototypenToString();
 		System.out.println(v);
 		
@@ -80,6 +83,8 @@ public class Main {
 		System.out.println("1"+ zentral.vControllProcessToString());
 		zentral.laden(verzeichnis);
 		System.out.println("1"+ zentral.vControllProcessToString());
+		
+		*/
 	}
 
 }

@@ -3,6 +3,8 @@ import java.util.Vector;
 
 public class Zentralverwaltung implements Interface {
 	private Vector <Prototyp> prototypen = new Vector <Prototyp>();    //Es soll von jedem Vektor nur einen geben.
+
+
 	private Vector <Command> controllprocess = new Vector <Command>();
 	
 	private static Zentralverwaltung instance = null;
@@ -13,6 +15,12 @@ public class Zentralverwaltung implements Interface {
 		if(instance==null)
 			instance =  new Zentralverwaltung();
 		return instance;
+	}
+	public Vector<Prototyp> getPrototypen() {
+		return prototypen;
+	}
+	public Vector<Command> getCommand() {
+		return controllprocess;
 	}
 	public Prototyp vPrototypenObject(int iD){
 		return prototypen.elementAt(iD);

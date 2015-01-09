@@ -11,7 +11,7 @@ public class Prototyp {
 	
 	@Override
 	public String toString() {
-		return "Prototyp [nameCommand=" + nameCommand + "]";
+		return nameCommand;
 	}
 	
 	public Command createInstance()
