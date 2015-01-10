@@ -1,4 +1,5 @@
 import java.awt.*;
+
 import java.awt.event.*;
 
 import javax.swing.*;
@@ -54,7 +55,12 @@ public class ControlDeveloper {
 	    
 	    JButton addButton = new JButton("Add");
 	    westPanel.add(addButton, BorderLayout.SOUTH);
-//	    addButton.addActionListener(this);
+	    addButton.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e) {
+	    		//das passiert wenn geklickt
+	    	}
+	    });
+	    
 	    
 //CENTER	    
 	    centerPanel.setLayout(new BorderLayout());
