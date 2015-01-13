@@ -1,9 +1,9 @@
 import java.util.Properties;
 import java.util.Vector;
 
+
 public class Zentralverwaltung implements Interface {
 	private Vector <Prototyp> prototypen = new Vector <Prototyp>();    //Es soll von jedem Vektor nur einen geben.
-
 
 	private Vector <Command> controllprocess = new Vector <Command>();
 	
@@ -95,8 +95,6 @@ public class Zentralverwaltung implements Interface {
 		Serialisieren ser=new Serialisieren();
 		ser.speichern(daten, verzeichnis);
 	
-	}
-
-	
+	}	
 	
 }
