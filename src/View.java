@@ -98,9 +98,8 @@ public class View extends JFrame {
 	    eastPanel.add(saveButton, BorderLayout.SOUTH);
 	    
 //SOUTH
-	    JTextField output = new JTextField("Ausgabefenster"); 
-	    southPanel.add(output);
-	    	    	    
+	    final JTextField output = new JTextField("Ausgabefenster"); 
+	    southPanel.add(output);	    	    	    
 	    
 //ACTIONLISTENER	    
         addButton.addActionListener(new ActionListener() {
@@ -108,6 +107,48 @@ public class View extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (prototypList.isSelectionEmpty()){
+					output.setText("Fehler: Kein Prototyp ausgewaehlt.");
+				}else{
+					commandList.updateUI();
+					zentral.addStep(prototypList.getSelectedValue());
+				}
+
+			}
+		});
+
+        upButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (commandList.isSelectionEmpty()){
+					output.setText("Fehler: Kein Command ausgewaehlt.");
+				}else{
+					commandList.updateUI();
+					zentral.incOrder(commandList.getSelectedIndex());
+				}
+
+			}
+		});
+        
+        downButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (commandList.isSelectionEmpty()){
+					output.setText("Fehler: Kein Command ausgewaehlt.");
+				}else{
+					commandList.updateUI();
+					zentral.decOrder(commandList.getSelectedIndex());
+				}
+
+			}
+		});
+        
+        removeButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (commandList.isSelectionEmpty()){
 					//fehler ausgeben
 				}else{
 					commandList.updateUI();
@@ -116,9 +157,6 @@ public class View extends JFrame {
 
 			}
 		});
-        
-        
-
 	    
 	}
 
