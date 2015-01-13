@@ -6,6 +6,8 @@ import java.util.Vector;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.plaf.SplitPaneUI;
+import javax.swing.plaf.basic.BasicBorders.SplitPaneBorder;
 
 
 public class View extends JFrame {
@@ -37,7 +39,7 @@ public class View extends JFrame {
 //FRAME	    
 	    JPanel southPanel = new JPanel();
 	    JPanel westPanel = new JPanel();
-	    JPanel eastPanel = new JPanel();
+	    final JPanel eastPanel = new JPanel();
 	    JPanel centerPanel = new JPanel();
 	   
 	    add( southPanel, BorderLayout.SOUTH );    
@@ -68,6 +70,9 @@ public class View extends JFrame {
 	    centerPanel.add(commandLabel, BorderLayout.NORTH);
 	    
 	    final JList<Command> commandList = new JList<Command>(zentral.getCommand());   //commandList  WARUM FINAL?
+	    JScrollBar scrollbar = new JScrollBar(JScrollBar.VERTICAL);                    //SCROLLEN GEHT NOCH NICHT
+        centerPanel.add(scrollbar, BorderLayout.EAST);
+        	    
 	    centerPanel.add(commandList, BorderLayout.CENTER);
 	    
 	    JButton removeButton = new JButton("Remove");
@@ -93,9 +98,22 @@ public class View extends JFrame {
 	    
 	    JLabel configLabel = new JLabel ("Configuration");
 	    eastPanel.add(configLabel, BorderLayout.NORTH);
-	    	    	    
+	    	       	    	    
 	    JButton saveButton = new JButton("Save");
 	    eastPanel.add(saveButton, BorderLayout.SOUTH);
+	   
+	    final JPanel configPanel = new JPanel();
+	    configPanel.setLayout(new GridLayout(2,5));
+	    eastPanel.add(configPanel);
+	    
+	    final JTextArea speed = new JTextArea("Speed");
+	    speed.setEditable(false);
+	    final JTextArea duration = new JTextArea("Duration");
+	    duration.setEditable(false);	  
+	    final JTextArea degree = new JTextArea("Degree");
+	    speed.setEditable(false);
+	    
+	    
 	    
 //SOUTH
 	    final JTextField output = new JTextField("Ausgabefenster"); 
@@ -149,15 +167,28 @@ public class View extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (commandList.isSelectionEmpty()){
-					//fehler ausgeben
+					output.setText("Fehler: Kein Command ausgewaehlt.");
 				}else{
 					commandList.updateUI();
-					zentral.addStep(prototypList.getSelectedValue());
+					zentral.removeStep(commandList.getSelectedIndex());
 				}
 
 			}
 		});
 	    
+        commandList.addListSelectionListener(new SelectionListener(){
+        	public void valueChanged(ListSelectionEvent e) {
+        		
+        		//MOMENTAN NOCH EIN TEST
+        		configPanel.updateUI();
+        		configPanel.add(speed);
+        		configPanel.add(duration);
+        		configPanel.add(degree);
+        	}
+        		
+        });
+        
+                
 	}
 
 	
