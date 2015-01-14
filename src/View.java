@@ -14,8 +14,8 @@ public class View extends JFrame {
 
 	private Zentralverwaltung zentral;
 	
-	public View( Zentralverwaltung zentral) {   //WARUM ?
-		super("Zentralverwaltung");                  //kopiert, nicht kapiert
+	public View(Zentralverwaltung zentral) {
+		super("Zentralverwaltung");                  
 		this.zentral = zentral;
 		
 //WINDOW
@@ -39,7 +39,7 @@ public class View extends JFrame {
 //FRAME	    
 	    JPanel southPanel = new JPanel();
 	    JPanel westPanel = new JPanel();
-	     JPanel eastPanel = new JPanel();
+	    JPanel eastPanel = new JPanel();
 	    JPanel centerPanel = new JPanel();
 	   
 	    add( southPanel, BorderLayout.SOUTH );    
@@ -57,7 +57,7 @@ public class View extends JFrame {
 	    JLabel prototypLabel = new JLabel("Prototypes");
 	    westPanel.add(prototypLabel, BorderLayout.NORTH);
 	    
-	     JList<Prototyp> prototypList = new JList<Prototyp>(zentral.getPrototypen());   //prototypList  WARUM ??? das wollte er bei prototypList.isSelectedEmpty()
+	    JList<Prototyp> prototypList = new JList<Prototyp>(zentral.getPrototypen());   //prototypList
 	    westPanel.add(prototypList, BorderLayout.CENTER);
 	    
 	    JButton addButton = new JButton("Add");
@@ -69,8 +69,8 @@ public class View extends JFrame {
 	    JLabel commandLabel = new JLabel("Commands");
 	    centerPanel.add(commandLabel, BorderLayout.NORTH);
 	    
-	     JList<Command> commandList = new JList<Command>(zentral.getCommand());   //commandList  WARUM ?
-	    JScrollBar scrollbar = new JScrollBar(JScrollBar.VERTICAL);                    //SCROLLEN GEHT NOCH NICHT
+	    JList<Command> commandList = new JList<Command>(zentral.getCommand());   //commandList
+	    JScrollBar scrollbar = new JScrollBar(JScrollBar.VERTICAL);              //SCROLLEN GEHT NOCH NICHT
         centerPanel.add(scrollbar, BorderLayout.EAST);
         	    
 	    centerPanel.add(commandList, BorderLayout.CENTER);
@@ -102,15 +102,15 @@ public class View extends JFrame {
 	    JButton saveButton = new JButton("Save");
 	    eastPanel.add(saveButton, BorderLayout.SOUTH);
 	   
-	     JPanel configPanel = new JPanel();
+	    JPanel configPanel = new JPanel();
 	    configPanel.setLayout(new GridLayout(2,5));
 	    eastPanel.add(configPanel);
 	    
-	     JTextArea speed = new JTextArea("Speed");
+	    JTextArea speed = new JTextArea("Speed");
 	    speed.setEditable(false);
-	     JTextArea duration = new JTextArea("Duration");
+	    JTextArea duration = new JTextArea("Duration");
 	    duration.setEditable(false);	  
-	     JTextArea degree = new JTextArea("Degree");
+	    JTextArea degree = new JTextArea("Degree");
 	    speed.setEditable(false);
 	    
 	    
